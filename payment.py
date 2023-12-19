@@ -18,8 +18,15 @@ class Payment:
         self.p_bills_var = IntVar()
         self.balance_var = IntVar()
 
+        self.frame =None
+        self.label =None
+
         self.total_balance = 0
         self.t_bills =0
+        self.bal_data =[]
+        self.adv_data=[]
+        self.tapal_data =[]
+
 
         self.data_list = []
         self.des = False
@@ -64,7 +71,7 @@ class Payment:
 
         # *******************************************************************************************
 
-        self.type_entry = ttk.Combobox(root, values=['ADVANCE', 'BALANCE', 'TAPAL', 'MAJURI'],
+        self.type_entry = ttk.Combobox(root, values=['ADVANCE', 'BALANCE', 'TAPAL'],
                                        font=('times new roman', 15, 'bold'),textvariable=self.type_var,justify=CENTER)
         self.type_entry.place(x=1188, y=95, height=37, width=220)
         self.type_var.trace('w', partial(trace_data, self, self.type_var))
@@ -100,21 +107,28 @@ class Payment:
         self.clear_button = Button(self.root, text="CLEAR", font=("times new roman", 15, "bold"), image=self.button_img,
                                    borderwidth=0, activebackground="white", background="white", foreground="white",
                                    compound=CENTER,command=self.clear_entry)
-        self.clear_button.place(x=480, y=750, height=45)
+        self.clear_button.place(x=420, y=750, height=45)
 
         # *******************************************************************************************
 
         self.save_button = Button(self.root, text="SAVE", font=("times new roman", 15, "bold"), image=self.button_img,
                                   borderwidth=0, activebackground="white", background="white", foreground="white",
                                   compound=CENTER,command=self.save)
-        self.save_button.place(x=680, y=750, height=45)
+        self.save_button.place(x=610, y=750, height=45)
+
+        # *******************************************************************************************
+
+        self.settlement_button = Button(self.root, text="SETTLEMENT", font=("times new roman", 15, "bold"), image=self.button_img,
+                                   borderwidth=0, activebackground="white", background="white", foreground="white",
+                                   compound=CENTER,command=self.settlement_payment)
+        self.settlement_button.place(x=800, y=750, height=45)
 
         # *******************************************************************************************
 
         self.clear_all_button = Button(self.root, text="CLEAR ALL", font=("times new roman", 15, "bold"), image=self.button_img,
                                    borderwidth=0, activebackground="white", background="white", foreground="white",
                                    compound=CENTER,command=self.clear_all)
-        self.clear_all_button.place(x=880, y=750, height=45)
+        self.clear_all_button.place(x=990, y=750, height=45)
 
 
         # *******************************************************************************************
@@ -237,8 +251,21 @@ class Payment:
             self.balance_var.set(0)
             self.amount_entry['state']='normal'
 
+    def settlement_payment(self):
+        response = messagebox.askyesno("Question", "Do you want to Clear All Entry!")
+        if response:
+            if self.type_var.get() =='ADVANCE':
+                settle_amount_defination(self, db_data=self.adv_data, payment_amount=self.adv_payment_amount,
+                                         total_amount=self.adv_total_payment)
+            elif self.type_var.get() =='BALANCE':
+                settle_amount_defination(self,db_data=self.bal_data,payment_amount=self.bal_payment_amount,total_amount=self.bal_total_payment)
+
+            elif self.type_var.get() =="TAPAL":
+                settle_amount_defination(self, db_data=self.tapal_data, payment_amount=self.tapal_payment_amount,
+                                         total_amount=self.tapal_total_balance)
 
 
-# root = Tk()
-# payment_object=Payment(root)
-# root.mainloop()
+
+root = Tk()
+payment_object=Payment(root)
+root.mainloop()

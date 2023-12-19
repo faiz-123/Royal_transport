@@ -623,3 +623,32 @@ def check_negative_value(self):
                 flag=False
     return flag
 
+
+def settle_amount_defination(self,db_data,payment_amount,total_amount):
+
+
+    amount = self.amount_var.get()
+    ind = 0
+    t = [t[-1] for t in db_data]
+    if sum(t)<amount:
+        messagebox.showwarning("WARNING", f"'{amount}' is More than Balance Amount")
+        return
+
+    for i in range(len(db_data)):
+
+        if db_data[i][-1] < amount:
+            payment_amount[i].set(db_data[i][-1])
+            total_amount[i].set(payment_amount[i].get() - db_data[i][-1])
+            amount -= db_data[i][-1]
+        else:
+            ind = i
+            break
+
+    dat = [dat.get() for dat in payment_amount]
+    total = sum(dat)
+    if not total == self.amount_var.get():
+        balance_amount = self.amount_var.get() - total
+        payment_amount[ind].set(balance_amount)
+        total_amount[ind].set(total_amount[ind].get() - balance_amount)
+
+
