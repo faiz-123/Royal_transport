@@ -1,0 +1,85 @@
+https://www.studytonight.com/tkinter/python-tkinter-checkbutton-widget
+1) Login
+	- Login Methods
+	
+2) Dash Board
+	
+	-	Booking Entry
+	-	Transpoters Entry
+	-   Vehicle Entry
+	-   Payment Ragister 
+	-   Cashbook
+	-	Setting
+	
+3) Booking Entry
+	
+	- Date
+	- Bill No 
+	- Name
+	- Vehicle No
+	- Source
+	- Destination
+	- Freight
+	- Holding 
+	- Majuri
+	- Balance
+	- Advance
+	- Total Balance
+	
+4) Transporter Entry
+	
+	- Name
+	- Mobile No
+	- Address
+
+5) Vehicle Entry
+	
+	- Vehicle Number
+	
+6) Payment Register
+	
+	- Advance
+	- holdings
+	- Balance
+	- Balance
+	- Settlement
+
+7) Cashbook 
+	
+	- Search
+	- Display all Data
+
+8) Setiing
+	- Edit,Delete,Update Data
+	
+
+
+
+
+
+-> Extra Detail
+
+Holding
+- start date $end date $ amount
+- majuri
+
+Payments
+- all trasnpoters name
+- tarsnpoter wise open new window
+
+-> in paynment new window
+
+-> in paynment new window
+
+	- tarsnpoter name
+	- bill info based on moth wise
+	- date wise fileter 
+	- No 
+	- date
+	- vehicle no
+	- s&d
+    - freight
+	- advance
+	- holding & majuri
+	- 
+

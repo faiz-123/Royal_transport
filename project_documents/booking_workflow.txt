@@ -1,0 +1,108 @@
+1) Booking Entry
+	
+	- Date
+	- Bill No 
+	- Name
+	- Vehicle No
+	- Source
+	- Destination
+	- Freight
+	- Holding 
+	- Majuri
+	- Balance
+	- Advance
+	- Total Balance
+	
+-> Flowchart
+
+1) GUI Desighn
+2) Coding Requirments
+3) SQL Table
+4) Testing
+
+-> GUI Desighn
+
+- Background Guardian
+- White Frame
+- Devide into two part
+- Upper Frame
+- Lower Frame
+
+--- in Upper Frame
+- Date - Calender
+- Bill No - from db
+- Name - as a Combobox 
+- Vehicle Number - as a Combobox
+
+--- In Lower Frame
+- Source - Combobox
+- Destination - Combobox
+- Freight - 
+- Holding - 
+- Majuri - 
+- Balance - 
+- Advance -> Payment Method
+- Total Balance - Auto Count
+
+--- Buttons
+- Save
+- Clear
+- last Bill
+- Holding
+- advance
+- Print
+- Edit
+
+
+-> Coding Requirments
+
+- Upper Fram
+
+1) Calender
+2) Bill Entry Box - Readable
+3) Name Entry Box 
+4) Vehicle Entry Box
+
+- Lower Frame
+1) Source Entry Box 
+2) Destination Entry Box
+3) Freight Entry Box
+4) Holding Entry Box - Popup for start and end date
+5) Majuri Entry Box
+6) Balance Entry Box
+7) Advance Entry Box 
+8) Payment method Listbox
+9) Total Balance Entry Box
+10) All Buttons (Save,Clear,last Bill,Holding,advance,Print,Edit)
+
+--- Methods
+
+- skip
+
+
+-> SQL Table
+
+bill_no, date, name, vehicle_no, source, destination, freight, h_start_date - h_end_date, holdings_amount, majuri_amount, balance_amount, advance_payment_mode, advance_amount, bal_payment_date, balance_payment_mode, balance_payment_amount,total_balance
+
+
+
+
+
+1) bill_no
+2) date
+3) name
+4) vehicle_no
+5) source
+6) destination
+7) freight
+8) h_start_date - h_end_date
+9) holdings_amount
+10) majuri_amount
+11) balance_amount
+12) adv_p_mode
+13) adv_amount
+14) bal_p_date
+15) bal_p_mode
+16) bal_p_amount
+17) adjust_amount
+18) total_balance

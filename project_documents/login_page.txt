@@ -1,0 +1,21 @@
+1) Login 
+
+	-> Desighn
+	
+		- username entry 
+		- password entry
+		- login button
+	
+	-> Database 
+		
+		- Not Required - (static password)
+		
+	-> Backend Methods
+		
+		- verify_password
+			
+			- Check entry should not be empty
+			- Get Username & Password
+			- Validate with static password
+			- if password is correct than open company window
+			- if password is wrong give Error message based on data
